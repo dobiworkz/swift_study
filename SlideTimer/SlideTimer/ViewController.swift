@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var sliderButton: UISlider!
     
     var timerCount:Int = 30
-    var timer:Timer?
+    weak var timer:Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
