@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -14,7 +15,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var sliderButton: UISlider!
     
-
+    var timerCount:Int = 30
+    var timer:Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,14 +31,19 @@ class ViewController: UIViewController {
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
         
+        timer?.invalidate()
+        
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ [self] _ in
+              countTime()
+            }
     }
     
     @IBAction func sliderMove(_ sender: UISlider) {
         
-        let sliderValue:Int = Int(sender.value * 60)
+        timerCount = Int(sender.value * 60)
         //sender.value => 0...1
         
-        countLabel.text = "\(sliderValue)초"
+        countLabel.text = "\(timerCount)초"
         
     }
     
@@ -45,6 +53,23 @@ class ViewController: UIViewController {
         
         // 2. 슬라이더 버튼 초기화
         sliderButton.setValue(0.5, animated: true)
+        
+        timerCount = 30
+        
+        timer?.invalidate()
+        
+    }
+    
+    func countTime(){
+        if timerCount > 0{
+            timerCount -= 1
+            sliderButton.setValue(Float(timerCount)/Float(60), animated: true)
+            countLabel.text = "\(timerCount)초"
+            
+        } else {
+            AudioServicesPlaySystemSound(SystemSoundID(1016))
+            timer?.invalidate()
+        }
         
     }
     
