@@ -33,9 +33,7 @@ class ViewController: UIViewController {
         
         timer?.invalidate()
         
-        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ [self] _ in
-              countTime()
-            }
+        self.timer = Timer.scheduledTimer(timeInterval: 1,target: self, selector: #selector(countTime), userInfo:nil, repeats: true)
     }
     
     @IBAction func sliderMove(_ sender: UISlider) {
@@ -53,14 +51,12 @@ class ViewController: UIViewController {
         
         // 2. 슬라이더 버튼 초기화
         sliderButton.setValue(0.5, animated: true)
-        
         timerCount = 30
-        
         timer?.invalidate()
         
     }
     
-    func countTime(){
+   @objc func countTime(){
         if timerCount > 0{
             timerCount -= 1
             sliderButton.setValue(Float(timerCount)/Float(60), animated: true)
