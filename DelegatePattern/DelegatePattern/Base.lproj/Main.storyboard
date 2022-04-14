@@ -42,17 +42,48 @@
                                     <constraint firstAttribute="height" constant="48" id="Udu-CB-Fs9"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fZs-4M-bLe">
+                                <rect key="frame" x="30" y="322" width="354" height="48"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="47A-HR-I7M">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhv-qg-mUM">
+                                        <rect key="frame" x="289" y="0.0" width="65" height="48"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="65" id="Gyd-DC-t56"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                        <connections>
+                                            <action selector="doneButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="47b-wD-0CF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="BA9-8Y-p4i"/>
+                                    <constraint firstAttribute="height" constant="48" id="mEa-Rn-51h"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="t7Z-i1-32D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="180" id="4tG-Y2-17t"/>
+                            <constraint firstItem="fZs-4M-bLe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="7b7-3M-kXM"/>
                             <constraint firstItem="t7Z-i1-32D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="LO2-QS-j6v"/>
+                            <constraint firstItem="fZs-4M-bLe" firstAttribute="top" secondItem="t7Z-i1-32D" secondAttribute="bottom" constant="50" id="lY5-2l-pZn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fZs-4M-bLe" secondAttribute="trailing" constant="30" id="sVX-33-3c2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t7Z-i1-32D" secondAttribute="trailing" constant="30" id="u3g-2B-msV"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="textField" destination="33X-hu-gxr" id="Lyd-st-1LN"/>
+                        <outlet property="textField2" destination="47A-HR-I7M" id="a2D-vE-hsx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
