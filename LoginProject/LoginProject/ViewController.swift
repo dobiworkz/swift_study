@@ -76,6 +76,7 @@ class ViewController: UIViewController {
     private lazy var passwordTextField: UITextField = {
        let textField = UITextField()
         
+        textField.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         textField.frame.size.height = 48
         textField.backgroundColor = .clear
         textField.textColor = .white
@@ -83,7 +84,8 @@ class ViewController: UIViewController {
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.spellCheckingType = .no
-        textField.keyboardType = .emailAddress
+        textField.isSecureTextEntry = true
+        textField.clearsOnBeginEditing = false
         //textField.addTarget(self, action:  #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         
         return textField
@@ -130,7 +132,7 @@ class ViewController: UIViewController {
         button.backgroundColor = .clear
         button.setTitle("비밀번호 재설정", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        //button.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
         
         return button
     }()
@@ -156,6 +158,7 @@ class ViewController: UIViewController {
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordSecureButton.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        passwordResetButton.translatesAutoresizingMaskIntoConstraints = false
         
         
         NSLayoutConstraint.activate([
@@ -196,13 +199,30 @@ class ViewController: UIViewController {
         stackView.heightAnchor.constraint(equalToConstant: textViewHeight*3 + 36).isActive = true
         
         
-        passwordResetButton.translatesAutoresizingMaskIntoConstraints = false
+        
         passwordResetButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10).isActive = true
         passwordResetButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
         passwordResetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
         passwordResetButton.heightAnchor.constraint(equalToConstant: textViewHeight).isActive = true
         
         
+    }
+    
+    @objc func resetButtonTapped(){
+        let alert = UIAlertController(title: "비밀번호바꾸기", message: "비밀번호를 바꾸시겠습니까?", preferredStyle: .alert)
+        
+        let success = UIAlertAction(title: "확인", style: .default) { action in
+            print("확인버튼이 눌렸습니다.")
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel) { action in
+            print("취소버튼이 눌렸습니다.")
+        }
+        
+        alert.addAction(cancel)
+        alert.addAction(success)
+        
+        present(alert, animated: true)
     }
 }
 
