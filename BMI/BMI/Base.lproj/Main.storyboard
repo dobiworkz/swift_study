@@ -82,6 +82,10 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nEg-vg-WH2"/>
+                                    <segue destination="Bnc-hf-fYv" kind="presentation" modalPresentationStyle="fullScreen" id="M04-hu-By2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -96,16 +100,22 @@
                             <constraint firstItem="j2T-I8-kbM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="130" id="x9O-JW-C1N"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calculateButton" destination="1OM-zn-etN" id="ywv-wE-5Bd"/>
+                        <outlet property="heightTextField" destination="80Y-we-FbF" id="YjD-cw-sgQ"/>
+                        <outlet property="mainLabel" destination="3hz-LL-umD" id="d1L-P5-3Du"/>
+                        <outlet property="weightTextField" destination="GqH-en-oHT" id="VZa-2s-L12"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="30" y="70"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="5RX-fD-UV5">
             <objects>
-                <viewController id="Bnc-hf-fYv" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yAb-bs-hWF">
+                <viewController id="Bnc-hf-fYv" customClass="ResultViewController" customModule="BMI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yAb-bs-hWF" customClass="Result">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -149,6 +159,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="Bnc-hf-fYv" eventType="touchUpInside" id="5xS-Dj-9uo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NXw-Bs-ij3"/>
@@ -161,6 +174,11 @@
                             <constraint firstItem="D4z-xD-mu2" firstAttribute="centerX" secondItem="yAb-bs-hWF" secondAttribute="centerX" id="xwN-qe-e26"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adviceLabel" destination="9Ky-63-Pa8" id="33B-dN-h8Q"/>
+                        <outlet property="backButton" destination="9HD-CG-A3z" id="LgQ-fH-VeI"/>
+                        <outlet property="bmiNumberLabel" destination="EQr-QL-xkQ" id="Cxn-cc-Tfj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2L-ce-Dlg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

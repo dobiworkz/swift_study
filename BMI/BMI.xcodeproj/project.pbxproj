@@ -13,6 +13,7 @@
 		21BD7FFA280D4095007CE863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21BD7FF8280D4095007CE863 /* Main.storyboard */; };
 		21BD7FFC280D4096007CE863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21BD7FFB280D4096007CE863 /* Assets.xcassets */; };
 		21BD7FFF280D4096007CE863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21BD7FFD280D4096007CE863 /* LaunchScreen.storyboard */; };
+		21BD8007280D4716007CE863 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BD8006280D4716007CE863 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		21BD7FFB280D4096007CE863 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21BD7FFE280D4096007CE863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21BD8000280D4096007CE863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21BD8006280D4716007CE863 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				21BD7FFB280D4096007CE863 /* Assets.xcassets */,
 				21BD7FFD280D4096007CE863 /* LaunchScreen.storyboard */,
 				21BD8000280D4096007CE863 /* Info.plist */,
+				21BD8006280D4716007CE863 /* ResultViewController.swift */,
 			);
 			path = BMI;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				21BD7FF7280D4095007CE863 /* ViewController.swift in Sources */,
 				21BD7FF3280D4095007CE863 /* AppDelegate.swift in Sources */,
 				21BD7FF5280D4095007CE863 /* SceneDelegate.swift in Sources */,
+				21BD8007280D4716007CE863 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
