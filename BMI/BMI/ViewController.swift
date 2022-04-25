@@ -93,6 +93,7 @@ extension ViewController: UITextFieldDelegate{
         
         if heightTextField.text != "", weightTextField.text != "" {
             weightTextField.resignFirstResponder()
+            shouldPerformSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
             return true
         } else if heightTextField.text != "" {
             weightTextField.becomeFirstResponder()
